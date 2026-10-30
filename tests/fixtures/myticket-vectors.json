@@ -1,0 +1,3509 @@
+{
+  "source": "Independent established Python HK AppMy codec with initial play count 1; all synthetic deterministic values, no real tickets or profiles.",
+  "cases": [
+    {
+      "input": {
+        "name": "A!?★☆♪",
+        "appearance": [
+          6,
+          0,
+          3,
+          2,
+          3,
+          12,
+          0,
+          0,
+          0
+        ],
+        "outfit": [
+          0,
+          40027,
+          40028,
+          40029
+        ],
+        "profileId": 20261030,
+        "playerCode": "000001945678"
+      },
+      "hex": "554997039d9e0101f9019d1e01010101013904060101fe0e0101010102023501600235930101600b01010101010101010101fa010101029d01015e0101010101010107010103040d010101010101010201010101011ba001010193010101010101010201010101010401ca019f020101a102a202f801016d43",
+      "decoded": {
+        "name": "A!?★☆♪",
+        "nameCodes": [
+          201,
+          413,
+          414,
+          415,
+          416,
+          412
+        ],
+        "profileId": 20261030,
+        "makeId": 64528,
+        "playerCode": "000001945678",
+        "gamePlayerCode": "000001945678",
+        "displayManager": 0,
+        "normalizedMakeId": 64528,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          6,
+          0,
+          3,
+          2,
+          3,
+          12,
+          0,
+          0,
+          0
+        ],
+        "outfit": [
+          0,
+          40027,
+          40028,
+          40029
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "aZ09",
+        "appearance": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "outfit": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "profileId": 1,
+        "playerCode": "000001900000"
+      },
+      "hex": "55490103010101010101011e01010101010104020102b5720101010102013501600235930101600b0101010101010101010101010101010101015e01010101010101010101010101010101010101010201010101011b92010101930101010101010101010101010101022f01e30201019b010102010101f47c",
+      "decoded": {
+        "name": "aZ09",
+        "nameCodes": [
+          301,
+          226,
+          400,
+          409,
+          0,
+          0
+        ],
+        "profileId": 1,
+        "makeId": 111038,
+        "playerCode": "000001900000",
+        "gamePlayerCode": "000001900000",
+        "displayManager": 0,
+        "normalizedMakeId": 111038,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "outfit": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "Q",
+        "appearance": [
+          254,
+          254,
+          254,
+          254,
+          254,
+          254,
+          254,
+          254,
+          254
+        ],
+        "outfit": [
+          65024,
+          65024,
+          65024,
+          65024
+        ],
+        "profileId": 4228250624,
+        "playerCode": "000001999999"
+      },
+      "hex": "5549ff03ff010101ff01ff1e01ffff0101ff04ff0104cfed0101010102013501600235930101600b01010101010101010101ff010101ffff01015e01010101010101ffff01ffffffffffff010101010101010101011b010101019301010101010101010101010101ff01da010101010101010102ff01017f0d",
+      "decoded": {
+        "name": "Q",
+        "nameCodes": [
+          217,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profileId": 4228250624,
+        "makeId": 247841,
+        "playerCode": "000001999999",
+        "gamePlayerCode": "000001999999",
+        "displayManager": 0,
+        "normalizedMakeId": 247841,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          254,
+          254,
+          254,
+          254,
+          254,
+          254,
+          254,
+          254,
+          254
+        ],
+        "outfit": [
+          65024,
+          65024,
+          65024,
+          65024
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "cq0E♪",
+        "appearance": [
+          151,
+          216,
+          67,
+          162,
+          69,
+          31,
+          86,
+          73,
+          105
+        ],
+        "outfit": [
+          9295,
+          64196,
+          43137,
+          9705
+        ],
+        "profileId": 688899859,
+        "playerCode": "000001910876"
+      },
+      "hex": "55496303fc0101012b01271e01257401018c0414010165670101010102013501600235930101600b01010101010101010101100101012aaa01015e0101010101010198d901a34620574a6a010101010101010101011b920101019301010101010101020101010101440231013f020101ce029e02c001011e6f",
+      "decoded": {
+        "name": "cq0E♪",
+        "nameCodes": [
+          303,
+          317,
+          400,
+          205,
+          412,
+          0
+        ],
+        "profileId": 688899859,
+        "makeId": 25602,
+        "playerCode": "000001910876",
+        "gamePlayerCode": "000001910876",
+        "displayManager": 0,
+        "normalizedMakeId": 25602,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          151,
+          216,
+          67,
+          162,
+          69,
+          31,
+          86,
+          73,
+          105
+        ],
+        "outfit": [
+          9295,
+          64196,
+          43137,
+          9705
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "k",
+        "appearance": [
+          36,
+          172,
+          89,
+          235,
+          189,
+          112,
+          138,
+          106,
+          236
+        ],
+        "outfit": [
+          21237,
+          5984,
+          64030,
+          3601
+        ],
+        "profileId": 2079505014,
+        "playerCode": "000001944212"
+      },
+      "hex": "55491603180101011a010f1e01544901016a04a00101e8b20101010102013501600235930101600b01010101010101010101200101017efc01015e0101010101010125ad01ecbe718b6bed010101010101010101011b0101010193010101010101010101010101015a02390101010101010101027801016e9b",
+      "decoded": {
+        "name": "k",
+        "nameCodes": [
+          311,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profileId": 2079505014,
+        "makeId": 59082,
+        "playerCode": "000001944212",
+        "gamePlayerCode": "000001944212",
+        "displayManager": 0,
+        "normalizedMakeId": 59082,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          36,
+          172,
+          89,
+          235,
+          189,
+          112,
+          138,
+          106,
+          236
+        ],
+        "outfit": [
+          21237,
+          5984,
+          64030,
+          3601
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "?Xem",
+        "appearance": [
+          175,
+          232,
+          227,
+          96,
+          142,
+          155,
+          166,
+          226,
+          39
+        ],
+        "outfit": [
+          41588,
+          12280,
+          322,
+          29977
+        ],
+        "profileId": 3928337069,
+        "playerCode": "000001909711"
+      },
+      "hex": "5549b803310101014401761e01a4180101e90469010171020101010102013501600235930101600b010101010101010101018f010101ed0201015e01010101010101b0e901618f9ca7e328010101010201010101011b330101019301010101010101010101010101e402a001e10201013b0101022901018fe3",
+      "decoded": {
+        "name": "?Xem",
+        "nameCodes": [
+          414,
+          224,
+          305,
+          313,
+          0,
+          0
+        ],
+        "profileId": 3928337069,
+        "makeId": 28561,
+        "playerCode": "000001909711",
+        "gamePlayerCode": "000001909711",
+        "displayManager": 0,
+        "normalizedMakeId": 28561,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          175,
+          232,
+          227,
+          96,
+          142,
+          155,
+          166,
+          226,
+          39
+        ],
+        "outfit": [
+          41588,
+          12280,
+          322,
+          29977
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "h9",
+        "appearance": [
+          145,
+          211,
+          51,
+          185,
+          33,
+          146,
+          180,
+          21,
+          25
+        ],
+        "outfit": [
+          54090,
+          31502,
+          15873,
+          4770
+        ],
+        "profileId": 3441615465,
+        "playerCode": "000001965092"
+      },
+      "hex": "554993037c0101014001131e01d51f01018f043d0101b22c0101010102013501600235930101600b01010101010101010101b5010101d03f01015e0101010101010192d401ba2293b5161a010101010101010101011b010101019301010101010101020101010101340236019b010101010101028a010113f6",
+      "decoded": {
+        "name": "h9",
+        "nameCodes": [
+          308,
+          409,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profileId": 3441615465,
+        "makeId": 45178,
+        "playerCode": "000001965092",
+        "gamePlayerCode": "000001965092",
+        "displayManager": 0,
+        "normalizedMakeId": 45178,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          145,
+          211,
+          51,
+          185,
+          33,
+          146,
+          180,
+          21,
+          25
+        ],
+        "outfit": [
+          54090,
+          31502,
+          15873,
+          4770
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "?GTe",
+        "appearance": [
+          23,
+          21,
+          106,
+          188,
+          170,
+          237,
+          95,
+          18,
+          177
+        ],
+        "outfit": [
+          42635,
+          6821,
+          13696,
+          28443
+        ],
+        "profileId": 2640277345,
+        "playerCode": "000001935267"
+      },
+      "hex": "554909031b010101b601701e01a83301013c04ce0101cdca0101010102013501600235930101600b010101010101010101018b010101a03601015e01010101010101181601bdabee6013b2010101010201010101011bdd01010193010101010101010101010101016b02a001d001010133010102c00101accb",
+      "decoded": {
+        "name": "?GTe",
+        "nameCodes": [
+          414,
+          207,
+          220,
+          305,
+          0,
+          0
+        ],
+        "profileId": 2640277345,
+        "makeId": 52221,
+        "playerCode": "000001935267",
+        "gamePlayerCode": "000001935267",
+        "displayManager": 0,
+        "normalizedMakeId": 52221,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          23,
+          21,
+          106,
+          188,
+          170,
+          237,
+          95,
+          18,
+          177
+        ],
+        "outfit": [
+          42635,
+          6821,
+          13696,
+          28443
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "oM",
+        "appearance": [
+          217,
+          69,
+          151,
+          254,
+          65,
+          231,
+          213,
+          246,
+          133
+        ],
+        "outfit": [
+          17763,
+          13190,
+          34273,
+          35287
+        ],
+        "profileId": 192422693,
+        "playerCode": "000001934815"
+      },
+      "hex": "554936033401010168018b1e0146a901019b04cc0101cb4c0101010102013501600235930101600b01010101010101010101620101010c8701015e01010101010101da4601ff42e8d6f786010101010101010101011b01010101930101010101010101010101010198023d01d601010101010102ba01013e80",
+      "decoded": {
+        "name": "oM",
+        "nameCodes": [
+          315,
+          213,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profileId": 192422693,
+        "makeId": 51585,
+        "playerCode": "000001934815",
+        "gamePlayerCode": "000001934815",
+        "displayManager": 0,
+        "normalizedMakeId": 51585,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          217,
+          69,
+          151,
+          254,
+          65,
+          231,
+          213,
+          246,
+          133
+        ],
+        "outfit": [
+          17763,
+          13190,
+          34273,
+          35287
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "SKF",
+        "appearance": [
+          244,
+          186,
+          179,
+          157,
+          214,
+          94,
+          120,
+          117,
+          38
+        ],
+        "outfit": [
+          21514,
+          53961,
+          897,
+          2742
+        ],
+        "profileId": 1614321401,
+        "playerCode": "000001938201"
+      },
+      "hex": "55492b03d401010185010b1e01555f01015c042a0101e1280101010102013501600235930101600b01010101010101010101c1010101620401015e01010101010101f5bb019ed75f797627010101010101010101011bcf0101019301010101010101010101010101b401dc01d4010101010101029d01015a05",
+      "decoded": {
+        "name": "SKF",
+        "nameCodes": [
+          219,
+          211,
+          206,
+          0,
+          0,
+          0
+        ],
+        "profileId": 1614321401,
+        "makeId": 57159,
+        "playerCode": "000001938201",
+        "gamePlayerCode": "000001938201",
+        "displayManager": 0,
+        "normalizedMakeId": 57159,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          244,
+          186,
+          179,
+          157,
+          214,
+          94,
+          120,
+          117,
+          38
+        ],
+        "outfit": [
+          21514,
+          53961,
+          897,
+          2742
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "u2LuoQ",
+        "appearance": [
+          180,
+          49,
+          96,
+          158,
+          47,
+          166,
+          17,
+          50,
+          21
+        ],
+        "outfit": [
+          18968,
+          48327,
+          19529,
+          27014
+        ],
+        "profileId": 2493665203,
+        "playerCode": "000001999032"
+      },
+      "hex": "55495503beda010196016a1e014b63010164043b0104d4b70101010102013501600235930101600b01010101010101010101f0010101974d01015e01010101010101b532019f30a7123316010101010201010101011bd50101019301010101010101020101010101610243019401010143023d028501010d56",
+      "decoded": {
+        "name": "u2LuoQ",
+        "nameCodes": [
+          321,
+          402,
+          212,
+          321,
+          315,
+          217
+        ],
+        "profileId": 2493665203,
+        "makeId": 249062,
+        "playerCode": "000001999032",
+        "gamePlayerCode": "000001999032",
+        "displayManager": 0,
+        "normalizedMakeId": 249062,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          180,
+          49,
+          96,
+          158,
+          47,
+          166,
+          17,
+          50,
+          21
+        ],
+        "outfit": [
+          18968,
+          48327,
+          19529,
+          27014
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "lu",
+        "appearance": [
+          216,
+          61,
+          245,
+          126,
+          189,
+          253,
+          72,
+          232,
+          167
+        ],
+        "outfit": [
+          51327,
+          18960,
+          62282,
+          57041
+        ],
+        "profileId": 1140651069,
+        "playerCode": "000001915406"
+      },
+      "hex": "5549bb034b0101013f01e01e01ca490101ca0473010177c70101010102013501600235930101600b01010101010101010101b101010145f501015e01010101010101d93e017fbefe49e9a8010101010101010101011b010101019301010101010101020101010101f6023a0143010101010101025b0101bfd8",
+      "decoded": {
+        "name": "lu",
+        "nameCodes": [
+          312,
+          321,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profileId": 1140651069,
+        "makeId": 30288,
+        "playerCode": "000001915406",
+        "gamePlayerCode": "000001915406",
+        "displayManager": 0,
+        "normalizedMakeId": 30288,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          216,
+          61,
+          245,
+          126,
+          189,
+          253,
+          72,
+          232,
+          167
+        ],
+        "outfit": [
+          51327,
+          18960,
+          62282,
+          57041
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "fr",
+        "appearance": [
+          212,
+          9,
+          130,
+          81,
+          250,
+          171,
+          245,
+          182,
+          240
+        ],
+        "outfit": [
+          18563,
+          8223,
+          29492,
+          8430
+        ],
+        "profileId": 1381148831,
+        "playerCode": "000001919626"
+      },
+      "hex": "5549460321010101a801221e0149cc01014c04ed010107db0101010102013501600235930101600b0101010101010101010110010101547401015e01010101010101d50a0152fbacf6b7f1010101010101010101011b0101010193010101010101010201010101018302340140010101010101024001013da6",
+      "decoded": {
+        "name": "fr",
+        "nameCodes": [
+          306,
+          318,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profileId": 1381148831,
+        "makeId": 1748,
+        "playerCode": "000001919626",
+        "gamePlayerCode": "000001919626",
+        "displayManager": 0,
+        "normalizedMakeId": 1748,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          212,
+          9,
+          130,
+          81,
+          250,
+          171,
+          245,
+          182,
+          240
+        ],
+        "outfit": [
+          18563,
+          8223,
+          29492,
+          8430
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "WLG",
+        "appearance": [
+          101,
+          9,
+          11,
+          138,
+          95,
+          75,
+          63,
+          25,
+          62
+        ],
+        "outfit": [
+          50633,
+          8797,
+          60931,
+          6595
+        ],
+        "profileId": 274488742,
+        "playerCode": "000001914522"
+      },
+      "hex": "5549480323010101f2011a1e01c79001018e047101017c400101010102013501600235930101600b01010101010101010101dd01010111ef01015e01010101010101660a018b604c401a3f010101010101010101011bd001010193010101010101010101010101010c01e001d501010101010102800101ab06",
+      "decoded": {
+        "name": "WLG",
+        "nameCodes": [
+          223,
+          212,
+          207,
+          0,
+          0,
+          0
+        ],
+        "profileId": 274488742,
+        "makeId": 31428,
+        "playerCode": "000001914522",
+        "gamePlayerCode": "000001914522",
+        "displayManager": 0,
+        "normalizedMakeId": 31428,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          101,
+          9,
+          11,
+          138,
+          95,
+          75,
+          63,
+          25,
+          62
+        ],
+        "outfit": [
+          50633,
+          8797,
+          60931,
+          6595
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "VR?cy7",
+        "appearance": [
+          186,
+          77,
+          226,
+          202,
+          50,
+          157,
+          146,
+          150,
+          55
+        ],
+        "outfit": [
+          62775,
+          48380,
+          33620,
+          57023
+        ],
+        "profileId": 3430604716,
+        "playerCode": "000001935421"
+      },
+      "hex": "55493e03be990101d801e01e01f72e0101e504d40101c6290101010102023501600235930101600b010101010101010101019f010101cf8401015e01010101010101bb4e01cb339e939738010101010201010101011ba00101019301010101010101010101010101e301df01db02010131024702ba0101f48e",
+      "decoded": {
+        "name": "VR?cy7",
+        "nameCodes": [
+          222,
+          218,
+          414,
+          303,
+          325,
+          407
+        ],
+        "profileId": 3430604716,
+        "makeId": 50275,
+        "playerCode": "000001935421",
+        "gamePlayerCode": "000001935421",
+        "displayManager": 0,
+        "normalizedMakeId": 50275,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          186,
+          77,
+          226,
+          202,
+          50,
+          157,
+          146,
+          150,
+          55
+        ],
+        "outfit": [
+          62775,
+          48380,
+          33620,
+          57023
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "D",
+        "appearance": [
+          161,
+          12,
+          41,
+          161,
+          63,
+          32,
+          23,
+          193,
+          220
+        ],
+        "outfit": [
+          42937,
+          44849,
+          37593,
+          61349
+        ],
+        "profileId": 3642141893,
+        "playerCode": "000001908847"
+      },
+      "hex": "55496903b00101016d01f11e01a9620101a7046301016d9e0101010102013501600235930101600b0101010101010101010196010101dc9401015e01010101010101a20d01a2402118c2dd010101010101010101011b0101010193010101010101010101010101012a01cd010101010101010102e101014596",
+      "decoded": {
+        "name": "D",
+        "nameCodes": [
+          204,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profileId": 3642141893,
+        "makeId": 27697,
+        "playerCode": "000001908847",
+        "gamePlayerCode": "000001908847",
+        "displayManager": 0,
+        "normalizedMakeId": 27697,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          161,
+          12,
+          41,
+          161,
+          63,
+          32,
+          23,
+          193,
+          220
+        ],
+        "outfit": [
+          42937,
+          44849,
+          37593,
+          61349
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "kel",
+        "appearance": [
+          59,
+          11,
+          123,
+          157,
+          118,
+          119,
+          143,
+          93,
+          193
+        ],
+        "outfit": [
+          23555,
+          40206,
+          46510,
+          16103
+        ],
+        "profileId": 705840854,
+        "playerCode": "000001990812"
+      },
+      "hex": "5549ea039e0101016501401e015d60010191045a010433f20101010102013501600235930101600b01010101010101010101270101012bb701015e010101010101013c0c019e7778905ec2010101010101010101011b3a01010193010101010101010201010101017c0239013302010101010102ac010177de",
+      "decoded": {
+        "name": "kel",
+        "nameCodes": [
+          311,
+          305,
+          312,
+          0,
+          0,
+          0
+        ],
+        "profileId": 705840854,
+        "makeId": 208066,
+        "playerCode": "000001990812",
+        "gamePlayerCode": "000001990812",
+        "displayManager": 0,
+        "normalizedMakeId": 208066,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          59,
+          11,
+          123,
+          157,
+          118,
+          119,
+          143,
+          93,
+          193
+        ],
+        "outfit": [
+          23555,
+          40206,
+          46510,
+          16103
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "qU19",
+        "appearance": [
+          215,
+          89,
+          3,
+          249,
+          17,
+          238,
+          34,
+          2,
+          219
+        ],
+        "outfit": [
+          13031,
+          3929,
+          17768,
+          3049
+        ],
+        "profileId": 48909942,
+        "playerCode": "000001906363"
+      },
+      "hex": "55492c0310010101ae010c1e01341b0101f304b201015c410101010102013501600235930101600b01010101010101010101f5010101034601015e01010101010101d85a01fa12ef2303dc010101010201010101011b93010101930101010101010101010101010104023f01de0201019b010102690101f1b6",
+      "decoded": {
+        "name": "qU19",
+        "nameCodes": [
+          317,
+          221,
+          401,
+          409,
+          0,
+          0
+        ],
+        "profileId": 48909942,
+        "makeId": 23269,
+        "playerCode": "000001906363",
+        "gamePlayerCode": "000001906363",
+        "displayManager": 0,
+        "normalizedMakeId": 23269,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          215,
+          89,
+          3,
+          249,
+          17,
+          238,
+          34,
+          2,
+          219
+        ],
+        "outfit": [
+          13031,
+          3929,
+          17768,
+          3049
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "K☆g",
+        "appearance": [
+          239,
+          101,
+          187,
+          207,
+          234,
+          93,
+          208,
+          181,
+          195
+        ],
+        "outfit": [
+          3173,
+          56185,
+          9414,
+          19012
+        ],
+        "profileId": 1500485561,
+        "playerCode": "000001977316"
+      },
+      "hex": "55498503dd010101eb014b1e010d7201017e041b01046f260101010102013501600235930101600b010101010101010101018f0101015b2501015e01010101010101f06601d0eb5ed1b6c4010101010101010101011b350101019301010101010101020101010101bc01d401a202010101010102560101715b",
+      "decoded": {
+        "name": "K☆g",
+        "nameCodes": [
+          211,
+          416,
+          307,
+          0,
+          0,
+          0
+        ],
+        "profileId": 1500485561,
+        "makeId": 223162,
+        "playerCode": "000001977316",
+        "gamePlayerCode": "000001977316",
+        "displayManager": 0,
+        "normalizedMakeId": 223162,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          239,
+          101,
+          187,
+          207,
+          234,
+          93,
+          208,
+          181,
+          195
+        ],
+        "outfit": [
+          3173,
+          56185,
+          9414,
+          19012
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "??Uy9",
+        "appearance": [
+          165,
+          73,
+          27,
+          170,
+          74,
+          159,
+          28,
+          60,
+          182
+        ],
+        "outfit": [
+          38324,
+          54054,
+          7722,
+          52916
+        ],
+        "profileId": 887332498,
+        "playerCode": "000001998189"
+      },
+      "hex": "55490603d40101014901d01e01974b010184044a010438680101010102013501600235930101600b0101010101010101010184010101361f01015e01010101010101a64a01ab4ba01d3db7010101010201010101011bde01010193010101010101010201010101011c02a001a001010147029b02fa0101ddeb",
+      "decoded": {
+        "name": "??Uy9",
+        "nameCodes": [
+          414,
+          414,
+          221,
+          325,
+          409,
+          0
+        ],
+        "profileId": 887332498,
+        "makeId": 209203,
+        "playerCode": "000001998189",
+        "gamePlayerCode": "000001998189",
+        "displayManager": 0,
+        "normalizedMakeId": 209203,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          165,
+          73,
+          27,
+          170,
+          74,
+          159,
+          28,
+          60,
+          182
+        ],
+        "outfit": [
+          38324,
+          54054,
+          7722,
+          52916
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "W",
+        "appearance": [
+          219,
+          76,
+          146,
+          0,
+          188,
+          166,
+          9,
+          119,
+          177
+        ],
+        "outfit": [
+          34238,
+          10445,
+          36220,
+          29417
+        ],
+        "profileId": 1827097379,
+        "playerCode": "000001991171"
+      },
+      "hex": "55496203290101010b01741e01874501013104c30104358f0101010102013501600235930101600b010101010101010101015d0101016f8f01015e01010101010101dc4d0101bda70a78b2010101010101010101011b0101010193010101010101010101010101019301e0010101010101010102f60101a66c",
+      "decoded": {
+        "name": "W",
+        "nameCodes": [
+          223,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profileId": 1827097379,
+        "makeId": 208477,
+        "playerCode": "000001991171",
+        "gamePlayerCode": "000001991171",
+        "displayManager": 0,
+        "normalizedMakeId": 208477,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          219,
+          76,
+          146,
+          0,
+          188,
+          166,
+          9,
+          119,
+          177
+        ],
+        "outfit": [
+          34238,
+          10445,
+          36220,
+          29417
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "vKI1",
+        "appearance": [
+          223,
+          61,
+          41,
+          186,
+          4,
+          64,
+          93,
+          201,
+          197
+        ],
+        "outfit": [
+          41335,
+          27776,
+          1988,
+          60029
+        ],
+        "profileId": 3909580213,
+        "playerCode": "000001907776"
+      },
+      "hex": "554944036d010101cc01ec1e01a31a0101c8041d0101516f0101010102013501600235930101600b0101010101010101010169010101ec0801015e01010101010101e03e01bb05415ecac6010101010201010101011bd201010193010101010101010101010101012a024401d401010193010102ed0101daeb",
+      "decoded": {
+        "name": "vKI1",
+        "nameCodes": [
+          322,
+          211,
+          209,
+          401,
+          0,
+          0
+        ],
+        "profileId": 3909580213,
+        "makeId": 20510,
+        "playerCode": "000001907776",
+        "gamePlayerCode": "000001907776",
+        "displayManager": 0,
+        "normalizedMakeId": 20510,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          223,
+          61,
+          41,
+          186,
+          4,
+          64,
+          93,
+          201,
+          197
+        ],
+        "outfit": [
+          41335,
+          27776,
+          1988,
+          60029
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "1",
+        "appearance": [
+          165,
+          26,
+          113,
+          24,
+          198,
+          73,
+          174,
+          101,
+          50
+        ],
+        "outfit": [
+          1288,
+          14510,
+          14620,
+          13129
+        ],
+        "profileId": 2347598237,
+        "playerCode": "000001949082"
+      },
+      "hex": "55490303390101015601341e01060e01019504990101f3b70101010102013501600235930101600b010101010101010101017d0101018e3a01015e01010101010101a61b0119c74aaf6633010101010101010101011b010101019301010101010101010101010101720293010101010101010102e70101a26f",
+      "decoded": {
+        "name": "1",
+        "nameCodes": [
+          401,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profileId": 2347598237,
+        "makeId": 61892,
+        "playerCode": "000001949082",
+        "gamePlayerCode": "000001949082",
+        "displayManager": 0,
+        "normalizedMakeId": 61892,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          165,
+          26,
+          113,
+          24,
+          198,
+          73,
+          174,
+          101,
+          50
+        ],
+        "outfit": [
+          1288,
+          14510,
+          14620,
+          13129
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "bRe",
+        "appearance": [
+          137,
+          124,
+          119,
+          12,
+          82,
+          211,
+          222,
+          116,
+          126
+        ],
+        "outfit": [
+          63121,
+          25350,
+          64940,
+          4460
+        ],
+        "profileId": 3276515859,
+        "playerCode": "000001924065"
+      },
+      "hex": "55498e0364010101ab01121e01f88901019a04cd010118d70101010102013501600235930101600b010101010101010101017e010101c6ff01015e010101010101018a7d010d53d4df757f010101010101010101011b33010101930101010101010101010101010178023001db020101010101026a0101f9fb",
+      "decoded": {
+        "name": "bRe",
+        "nameCodes": [
+          302,
+          218,
+          305,
+          0,
+          0,
+          0
+        ],
+        "profileId": 3276515859,
+        "makeId": 6079,
+        "playerCode": "000001924065",
+        "gamePlayerCode": "000001924065",
+        "displayManager": 0,
+        "normalizedMakeId": 6079,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          137,
+          124,
+          119,
+          12,
+          82,
+          211,
+          222,
+          116,
+          126
+        ],
+        "outfit": [
+          63121,
+          25350,
+          64940,
+          4460
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "dV",
+        "appearance": [
+          98,
+          23,
+          243,
+          45,
+          217,
+          86,
+          90,
+          0,
+          245
+        ],
+        "outfit": [
+          18461,
+          21757,
+          30563,
+          44678
+        ],
+        "profileId": 835035223,
+        "playerCode": "000001967046"
+      },
+      "hex": "5549c10356010101db01b01e01496601015c04ef010456eb0101010102013501600235930101600b0101010101010101010136010101337801015e010101010101016318012eda575b01f6010101010101010101011b010101019301010101010101010101010101f4023201df01010101010102530101d968",
+      "decoded": {
+        "name": "dV",
+        "nameCodes": [
+          304,
+          222,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profileId": 835035223,
+        "makeId": 216984,
+        "playerCode": "000001967046",
+        "gamePlayerCode": "000001967046",
+        "displayManager": 0,
+        "normalizedMakeId": 216984,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          98,
+          23,
+          243,
+          45,
+          217,
+          86,
+          90,
+          0,
+          245
+        ],
+        "outfit": [
+          18461,
+          21757,
+          30563,
+          44678
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "6CM",
+        "appearance": [
+          254,
+          104,
+          157,
+          13,
+          155,
+          61,
+          116,
+          44,
+          32
+        ],
+        "outfit": [
+          59767,
+          35653,
+          52420,
+          55612
+        ],
+        "profileId": 3066238745,
+        "playerCode": "000001986494"
+      },
+      "hex": "5549c4038c0101019201db1e01eb620101eb04ab01040ae70101010102013501600235930101600b0101010101010101010117010101b9ce01015e01010101010101ff69010e9c3e752d21010101010101010101011bd601010193010101010101010101010101019e029801cc01010101010102d10101ca22",
+      "decoded": {
+        "name": "6CM",
+        "nameCodes": [
+          406,
+          203,
+          213,
+          0,
+          0,
+          0
+        ],
+        "profileId": 3066238745,
+        "makeId": 197600,
+        "playerCode": "000001986494",
+        "gamePlayerCode": "000001986494",
+        "displayManager": 0,
+        "normalizedMakeId": 197600,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          254,
+          104,
+          157,
+          13,
+          155,
+          61,
+          116,
+          44,
+          32
+        ],
+        "outfit": [
+          59767,
+          35653,
+          52420,
+          55612
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "aJNhq",
+        "appearance": [
+          130,
+          38,
+          199,
+          146,
+          208,
+          124,
+          228,
+          84,
+          237
+        ],
+        "outfit": [
+          45101,
+          52352,
+          52038,
+          51194
+        ],
+        "profileId": 37459008,
+        "playerCode": "000001963519"
+      },
+      "hex": "55491303ce0101011301c91e01b1de01014304130101bb5c0101010102013501600235930101600b01010101010101010101c301010103cd01015e0101010101010183270193d17de555ee010101010201010101011bd70101019301010101010101010101010101c8022f01d301010136023f024e01015f02",
+      "decoded": {
+        "name": "aJNhq",
+        "nameCodes": [
+          301,
+          210,
+          214,
+          308,
+          317,
+          0
+        ],
+        "profileId": 37459008,
+        "makeId": 47521,
+        "playerCode": "000001963519",
+        "gamePlayerCode": "000001963519",
+        "displayManager": 0,
+        "normalizedMakeId": 47521,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          130,
+          38,
+          199,
+          146,
+          208,
+          124,
+          228,
+          84,
+          237
+        ],
+        "outfit": [
+          45101,
+          52352,
+          52038,
+          51194
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "p",
+        "appearance": [
+          53,
+          135,
+          36,
+          6,
+          8,
+          1,
+          156,
+          17,
+          83
+        ],
+        "outfit": [
+          11059,
+          26330,
+          47330,
+          46887
+        ],
+        "profileId": 689051894,
+        "playerCode": "000001971837"
+      },
+      "hex": "5549b903680101019c01b81e012c5f01018e044b010461810101010102013501600235930101600b01010101010101010101df0101012aba01015e010101010101013688010709029d1254010101010101010101011b01010101930101010101010101010101010125023e010101010101010102420101886b",
+      "decoded": {
+        "name": "p",
+        "nameCodes": [
+          316,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profileId": 689051894,
+        "makeId": 219683,
+        "playerCode": "000001971837",
+        "gamePlayerCode": "000001971837",
+        "displayManager": 0,
+        "normalizedMakeId": 219683,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          53,
+          135,
+          36,
+          6,
+          8,
+          1,
+          156,
+          17,
+          83
+        ],
+        "outfit": [
+          11059,
+          26330,
+          47330,
+          46887
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "XH!HI",
+        "appearance": [
+          220,
+          132,
+          83,
+          20,
+          140,
+          242,
+          49,
+          142,
+          130
+        ],
+        "outfit": [
+          63733,
+          63292,
+          34124,
+          59437
+        ],
+        "profileId": 3231099913,
+        "playerCode": "000001954032"
+      },
+      "hex": "55491f03f9010101d201ea1e01faef0101dd040e01019e4c0101010102013501600235930101600b0101010101010101010117010101c38601015e01010101010101dd8501158df3328f83010101010101010101011b9f01010193010101010101010101010101015401e101d1020101d101d202350101edba",
+      "decoded": {
+        "name": "XH!HI",
+        "nameCodes": [
+          224,
+          208,
+          413,
+          208,
+          209,
+          0
+        ],
+        "profileId": 3231099913,
+        "makeId": 40110,
+        "playerCode": "000001954032",
+        "gamePlayerCode": "000001954032",
+        "displayManager": 0,
+        "normalizedMakeId": 40110,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          220,
+          132,
+          83,
+          20,
+          140,
+          242,
+          49,
+          142,
+          130
+        ],
+        "outfit": [
+          63733,
+          63292,
+          34124,
+          59437
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "NjR5T",
+        "appearance": [
+          162,
+          90,
+          34,
+          155,
+          41,
+          80,
+          132,
+          88,
+          246
+        ],
+        "outfit": [
+          47364,
+          14615,
+          7838,
+          44843
+        ],
+        "profileId": 1412203035,
+        "playerCode": "000001925339"
+      },
+      "hex": "5549d9033a010101bd01b01e01babe01012b041f01012db20101010102013501600235930101600b01010101010101010101db010101561f01015e01010101010101a35b019c2a518559f7010101010201010101011bdb01010193010101010101010201010101012301d701380101019701dd0251010187a2",
+      "decoded": {
+        "name": "NjR5T",
+        "nameCodes": [
+          214,
+          310,
+          218,
+          405,
+          220,
+          0
+        ],
+        "profileId": 1412203035,
+        "makeId": 11397,
+        "playerCode": "000001925339",
+        "gamePlayerCode": "000001925339",
+        "displayManager": 0,
+        "normalizedMakeId": 11397,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          162,
+          90,
+          34,
+          155,
+          41,
+          80,
+          132,
+          88,
+          246
+        ],
+        "outfit": [
+          47364,
+          14615,
+          7838,
+          44843
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "EMy",
+        "appearance": [
+          163,
+          245,
+          73,
+          59,
+          220,
+          96,
+          211,
+          6,
+          167
+        ],
+        "outfit": [
+          38623,
+          36614,
+          39688,
+          58174
+        ],
+        "profileId": 1994920284,
+        "playerCode": "000001918314"
+      },
+      "hex": "5549480390010101a401e51e01987701015004cd01010a3e0101010102013501600235930101600b0101010101010101010123010101799c01015e01010101010101a4f6013cdd61d407a8010101010101010101011b4701010193010101010101010101010101014a01ce01d6020101010101029601016804",
+      "decoded": {
+        "name": "EMy",
+        "nameCodes": [
+          205,
+          213,
+          325,
+          0,
+          0,
+          0
+        ],
+        "profileId": 1994920284,
+        "makeId": 2356,
+        "playerCode": "000001918314",
+        "gamePlayerCode": "000001918314",
+        "displayManager": 0,
+        "normalizedMakeId": 2356,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          163,
+          245,
+          73,
+          59,
+          220,
+          96,
+          211,
+          6,
+          167
+        ],
+        "outfit": [
+          38623,
+          36614,
+          39688,
+          58174
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "X2q",
+        "appearance": [
+          22,
+          96,
+          142,
+          210,
+          75,
+          189,
+          114,
+          3,
+          123
+        ],
+        "outfit": [
+          54689,
+          2486,
+          24260,
+          16413
+        ],
+        "profileId": 667212073,
+        "playerCode": "000001912922"
+      },
+      "hex": "5549da030a0101012401411e01d77801013d04ef01017d810101010102013501600235930101600b010101010101010101015e010101296001015e01010101010101176101d34cbe73047c010101010101010101011b3f01010193010101010101010201010101018f01e1019402010101010102c001012ec2",
+      "decoded": {
+        "name": "X2q",
+        "nameCodes": [
+          224,
+          402,
+          317,
+          0,
+          0,
+          0
+        ],
+        "profileId": 667212073,
+        "makeId": 31748,
+        "playerCode": "000001912922",
+        "gamePlayerCode": "000001912922",
+        "displayManager": 0,
+        "normalizedMakeId": 31748,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          22,
+          96,
+          142,
+          210,
+          75,
+          189,
+          114,
+          3,
+          123
+        ],
+        "outfit": [
+          54689,
+          2486,
+          24260,
+          16413
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "Zkd63g",
+        "appearance": [
+          124,
+          174,
+          190,
+          217,
+          2,
+          29,
+          35,
+          212,
+          19
+        ],
+        "outfit": [
+          52108,
+          3023,
+          45136,
+          47820
+        ],
+        "profileId": 757706592,
+        "playerCode": "000001961866"
+      },
+      "hex": "55498b030c3501010201bc1e01cd590101b204670101a5790101010102023501600235930101600b01010101010101010101880101012eb201015e010101010101017daf01da031e24d514010101010201010101011b320101019301010101010101020101010101bf01e3013902010198029502db0101badb",
+      "decoded": {
+        "name": "Zkd63g",
+        "nameCodes": [
+          226,
+          311,
+          304,
+          406,
+          403,
+          307
+        ],
+        "profileId": 757706592,
+        "makeId": 41940,
+        "playerCode": "000001961866",
+        "gamePlayerCode": "000001961866",
+        "displayManager": 0,
+        "normalizedMakeId": 41940,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          124,
+          174,
+          190,
+          217,
+          2,
+          29,
+          35,
+          212,
+          19
+        ],
+        "outfit": [
+          52108,
+          3023,
+          45136,
+          47820
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "xahRU",
+        "appearance": [
+          124,
+          168,
+          0,
+          23,
+          177,
+          213,
+          184,
+          26,
+          173
+        ],
+        "outfit": [
+          34572,
+          32391,
+          8594,
+          54159
+        ],
+        "profileId": 1226156918,
+        "playerCode": "000001958864"
+      },
+      "hex": "5549b30380010101b401d51e0188940101f204810101b13f0101010102013501600235930101600b01010101010101010101640101014a2201015e010101010101017da90118b2d6b91bae010101010101010101011b360101019301010101010101020101010101010246012f020101db01de02070101d7e4",
+      "decoded": {
+        "name": "xahRU",
+        "nameCodes": [
+          324,
+          301,
+          308,
+          218,
+          221,
+          0
+        ],
+        "profileId": 1226156918,
+        "makeId": 44942,
+        "playerCode": "000001958864",
+        "gamePlayerCode": "000001958864",
+        "displayManager": 0,
+        "normalizedMakeId": 44942,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          124,
+          168,
+          0,
+          23,
+          177,
+          213,
+          184,
+          26,
+          173
+        ],
+        "outfit": [
+          34572,
+          32391,
+          8594,
+          54159
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "VTu",
+        "appearance": [
+          194,
+          86,
+          146,
+          36,
+          248,
+          87,
+          11,
+          47,
+          79
+        ],
+        "outfit": [
+          20457,
+          55597,
+          27472,
+          6288
+        ],
+        "profileId": 515766600,
+        "playerCode": "000001924246"
+      },
+      "hex": "5549d203db010101bc01191e01513a01011b041f010111d90101010102013501600235930101600b01010101010101010101a9010101206c01015e01010101010101c3570125f9580c3050010101010101010101011b4301010193010101010101010101010101019301df01dd0201010101010208010132e4",
+      "decoded": {
+        "name": "VTu",
+        "nameCodes": [
+          222,
+          220,
+          321,
+          0,
+          0,
+          0
+        ],
+        "profileId": 515766600,
+        "makeId": 4296,
+        "playerCode": "000001924246",
+        "gamePlayerCode": "000001924246",
+        "displayManager": 0,
+        "normalizedMakeId": 4296,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          194,
+          86,
+          146,
+          36,
+          248,
+          87,
+          11,
+          47,
+          79
+        ],
+        "outfit": [
+          20457,
+          55597,
+          27472,
+          6288
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "Qsh",
+        "appearance": [
+          142,
+          8,
+          138,
+          100,
+          241,
+          114,
+          180,
+          99,
+          110
+        ],
+        "outfit": [
+          33023,
+          64246,
+          21679,
+          22847
+        ],
+        "profileId": 179761872,
+        "playerCode": "000001965781"
+      },
+      "hex": "55498103fc01010105015a1e0182810101d704850101b43f0101010102013501600235930101600b01010101010101010101990101010b5601015e010101010101018f090165f273b5646f010101010101010101011b3601010193010101010101010201010101018b01da014102010101010102f20101dffd",
+      "decoded": {
+        "name": "Qsh",
+        "nameCodes": [
+          217,
+          319,
+          308,
+          0,
+          0,
+          0
+        ],
+        "profileId": 179761872,
+        "makeId": 45707,
+        "playerCode": "000001965781",
+        "gamePlayerCode": "000001965781",
+        "displayManager": 0,
+        "normalizedMakeId": 45707,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          142,
+          8,
+          138,
+          100,
+          241,
+          114,
+          180,
+          99,
+          110
+        ],
+        "outfit": [
+          33023,
+          64246,
+          21679,
+          22847
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "mD",
+        "appearance": [
+          163,
+          195,
+          65,
+          173,
+          43,
+          76,
+          120,
+          172,
+          160
+        ],
+        "outfit": [
+          15780,
+          54453,
+          10098,
+          23698
+        ],
+        "profileId": 3472620507,
+        "playerCode": "000001919752"
+      },
+      "hex": "55496403d60101019a015d1e013ee201016e04a30101085e0101010102013501600235930101600b01010101010101010101ef010101d22801015e01010101010101a4c401ae2c4d79ada1010101010101010101011b01010101930101010101010101010101010142023b01cd010101010101028b010102d7",
+      "decoded": {
+        "name": "mD",
+        "nameCodes": [
+          313,
+          204,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profileId": 3472620507,
+        "makeId": 1878,
+        "playerCode": "000001919752",
+        "gamePlayerCode": "000001919752",
+        "displayManager": 0,
+        "normalizedMakeId": 1878,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          163,
+          195,
+          65,
+          173,
+          43,
+          76,
+          120,
+          172,
+          160
+        ],
+        "outfit": [
+          15780,
+          54453,
+          10098,
+          23698
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "SIgDg",
+        "appearance": [
+          88,
+          183,
+          17,
+          30,
+          133,
+          157,
+          55,
+          147,
+          108
+        ],
+        "outfit": [
+          51011,
+          25899,
+          11119,
+          10238
+        ],
+        "profileId": 3337455817,
+        "playerCode": "000001926138"
+      },
+      "hex": "5549bc03660101019b01291e01c90c0101470408010130d40101010102013501600235930101600b0101010101010101010127010101ca2c01015e0101010101010159b8011f869e38946d010101010101010101011b3501010193010101010101010101010101011201dc01d2020101cd02350291010180ba",
+      "decoded": {
+        "name": "SIgDg",
+        "nameCodes": [
+          219,
+          209,
+          307,
+          204,
+          307,
+          0
+        ],
+        "profileId": 3337455817,
+        "makeId": 12196,
+        "playerCode": "000001926138",
+        "gamePlayerCode": "000001926138",
+        "displayManager": 0,
+        "normalizedMakeId": 12196,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          88,
+          183,
+          17,
+          30,
+          133,
+          157,
+          55,
+          147,
+          108
+        ],
+        "outfit": [
+          51011,
+          25899,
+          11119,
+          10238
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "0H",
+        "appearance": [
+          10,
+          29,
+          7,
+          138,
+          26,
+          56,
+          181,
+          104,
+          106
+        ],
+        "outfit": [
+          21897,
+          16138,
+          42523,
+          40128
+        ],
+        "profileId": 2822521453,
+        "playerCode": "000001920874"
+      },
+      "hex": "5549b60340010101c2019e1e0156df0101390495010104380101010102013501600235930101600b010101010101010101015e010101aba701015e010101010101010b1e018b1b39b6696b010101010101010101011b01010101930101010101010101010101010108029201d1010101010101024a01015433",
+      "decoded": {
+        "name": "0H",
+        "nameCodes": [
+          400,
+          208,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profileId": 2822521453,
+        "makeId": 820,
+        "playerCode": "000001920874",
+        "gamePlayerCode": "000001920874",
+        "displayManager": 0,
+        "normalizedMakeId": 820,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          10,
+          29,
+          7,
+          138,
+          26,
+          56,
+          181,
+          104,
+          106
+        ],
+        "outfit": [
+          21897,
+          16138,
+          42523,
+          40128
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "idSU♪",
+        "appearance": [
+          105,
+          151,
+          210,
+          150,
+          72,
+          145,
+          60,
+          223,
+          231
+        ],
+        "outfit": [
+          6484,
+          7081,
+          49854,
+          39953
+        ],
+        "profileId": 3811622262,
+        "playerCode": "000001971172"
+      },
+      "hex": "5549cc031c01010182019d1e011a6e0101df04490104671e0101010102013501600235930101600b01010101010101010101ae010101e6c401015e010101010101016a98019749923de0e8010101010101010101011bdc0101019301010101010101020101010101d302370132010101de029e02c501012246",
+      "decoded": {
+        "name": "idSU♪",
+        "nameCodes": [
+          309,
+          304,
+          219,
+          221,
+          412,
+          0
+        ],
+        "profileId": 3811622262,
+        "makeId": 221114,
+        "playerCode": "000001971172",
+        "gamePlayerCode": "000001971172",
+        "displayManager": 0,
+        "normalizedMakeId": 221114,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          105,
+          151,
+          210,
+          150,
+          72,
+          145,
+          60,
+          223,
+          231
+        ],
+        "outfit": [
+          6484,
+          7081,
+          49854,
+          39953
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "z",
+        "appearance": [
+          180,
+          35,
+          131,
+          251,
+          89,
+          121,
+          19,
+          46,
+          104
+        ],
+        "outfit": [
+          49907,
+          34652,
+          15945,
+          39586
+        ],
+        "profileId": 4030703103,
+        "playerCode": "000001985098"
+      },
+      "hex": "5549f9038801010188019c1e01c4b701011604d601040d1e0101010102013501600235930101600b010101010101010101013e010101f43f01015e01010101010101b52401fc5a7a142f69010101010101010101011b010101019301010101010101010101010101840248010101010101010102e401015558",
+      "decoded": {
+        "name": "z",
+        "nameCodes": [
+          326,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profileId": 4030703103,
+        "makeId": 198164,
+        "playerCode": "000001985098",
+        "gamePlayerCode": "000001985098",
+        "displayManager": 0,
+        "normalizedMakeId": 198164,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          180,
+          35,
+          131,
+          251,
+          89,
+          121,
+          19,
+          46,
+          104
+        ],
+        "outfit": [
+          49907,
+          34652,
+          15945,
+          39586
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "0tB",
+        "appearance": [
+          248,
+          189,
+          145,
+          52,
+          7,
+          119,
+          220,
+          235,
+          183
+        ],
+        "outfit": [
+          35748,
+          23720,
+          37191,
+          42326
+        ],
+        "profileId": 3793373940,
+        "playerCode": "000001971175"
+      },
+      "hex": "55492a035e010101d901a61e018d310101c6043d0104671d0101010102013501600235930101600b01010101010101010101fc010101e59201015e01010101010101f9be01350878ddecb8010101010101010101011bcb01010193010101010101010201010101019202920142010101010101020601018d57",
+      "decoded": {
+        "name": "0tB",
+        "nameCodes": [
+          400,
+          320,
+          202,
+          0,
+          0,
+          0
+        ],
+        "profileId": 3793373940,
+        "makeId": 221113,
+        "playerCode": "000001971175",
+        "gamePlayerCode": "000001971175",
+        "displayManager": 0,
+        "normalizedMakeId": 221113,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          248,
+          189,
+          145,
+          52,
+          7,
+          119,
+          220,
+          235,
+          183
+        ],
+        "outfit": [
+          35748,
+          23720,
+          37191,
+          42326
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "s",
+        "appearance": [
+          69,
+          160,
+          181,
+          55,
+          125,
+          11,
+          169,
+          202,
+          194
+        ],
+        "outfit": [
+          30822,
+          30729,
+          58838,
+          33751
+        ],
+        "profileId": 3311233581,
+        "playerCode": "000001912317"
+      },
+      "hex": "5549780379010101bd01851e0179df0101b204bb010163060101010102013501600235930101600b010101010101010101015c010101c8e701015e0101010101010146a101387e0caacbc3010101010101010101011b010101019301010101010101010101010101b60241010101010101010102820101b410",
+      "decoded": {
+        "name": "s",
+        "nameCodes": [
+          319,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profileId": 3311233581,
+        "makeId": 24995,
+        "playerCode": "000001912317",
+        "gamePlayerCode": "000001912317",
+        "displayManager": 0,
+        "normalizedMakeId": 24995,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          69,
+          160,
+          181,
+          55,
+          125,
+          11,
+          169,
+          202,
+          194
+        ],
+        "outfit": [
+          30822,
+          30729,
+          58838,
+          33751
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "UYv",
+        "appearance": [
+          57,
+          38,
+          123,
+          103,
+          203,
+          25,
+          185,
+          149,
+          138
+        ],
+        "outfit": [
+          44014,
+          59554,
+          13053,
+          58942
+        ],
+        "profileId": 801925452,
+        "playerCode": "000001947350"
+      },
+      "hex": "55499203ea0101013101e81e01ad9b01015d04b20101fc840101010102013501600235930101600b0101010101010101010126010101313401015e010101010101013a270168cc1aba968b010101010101010101011b4401010193010101010101010101010101017c01de01e2020101010101028c01014941",
+      "decoded": {
+        "name": "UYv",
+        "nameCodes": [
+          221,
+          225,
+          322,
+          0,
+          0,
+          0
+        ],
+        "profileId": 801925452,
+        "makeId": 64136,
+        "playerCode": "000001947350",
+        "gamePlayerCode": "000001947350",
+        "displayManager": 0,
+        "normalizedMakeId": 64136,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          57,
+          38,
+          123,
+          103,
+          203,
+          25,
+          185,
+          149,
+          138
+        ],
+        "outfit": [
+          44014,
+          59554,
+          13053,
+          58942
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "☆D",
+        "appearance": [
+          33,
+          217,
+          184,
+          108,
+          190,
+          91,
+          163,
+          97,
+          50
+        ],
+        "outfit": [
+          15925,
+          9826,
+          18078,
+          42159
+        ],
+        "profileId": 3779472724,
+        "playerCode": "000001906821"
+      },
+      "hex": "5549610327010101e501a61e013f740101ef04aa010156310101010102013501600235930101600b0101010101010101010155010101e44701015e0101010101010122da016dbf5ca46233010101010101010101011b010101019301010101010101010101010101b902a201cd01010101010102890101b41d",
+      "decoded": {
+        "name": "☆D",
+        "nameCodes": [
+          416,
+          204,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profileId": 3779472724,
+        "makeId": 21723,
+        "playerCode": "000001906821",
+        "gamePlayerCode": "000001906821",
+        "displayManager": 0,
+        "normalizedMakeId": 21723,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          33,
+          217,
+          184,
+          108,
+          190,
+          91,
+          163,
+          97,
+          50
+        ],
+        "outfit": [
+          15925,
+          9826,
+          18078,
+          42159
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "Db",
+        "appearance": [
+          18,
+          100,
+          232,
+          110,
+          185,
+          7,
+          151,
+          201,
+          139
+        ],
+        "outfit": [
+          39271,
+          41534,
+          56534,
+          60909
+        ],
+        "profileId": 1634546586,
+        "playerCode": "000001974816"
+      },
+      "hex": "55493403a3010101b401ef1e019b02010194049d010475f00101010102013501600235930101600b01010101010101010101dc01010163de01015e010101010101011365016fba0898ca8c010101010101010101011b010101019301010101010101020101010101e901cd013001010101010102e1010175b4",
+      "decoded": {
+        "name": "Db",
+        "nameCodes": [
+          204,
+          302,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profileId": 1634546586,
+        "makeId": 224894,
+        "playerCode": "000001974816",
+        "gamePlayerCode": "000001974816",
+        "displayManager": 0,
+        "normalizedMakeId": 224894,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          18,
+          100,
+          232,
+          110,
+          185,
+          7,
+          151,
+          201,
+          139
+        ],
+        "outfit": [
+          39271,
+          41534,
+          56534,
+          60909
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "fw♪",
+        "appearance": [
+          83,
+          250,
+          50,
+          150,
+          102,
+          55,
+          127,
+          94,
+          173
+        ],
+        "outfit": [
+          49105,
+          20305,
+          55878,
+          56863
+        ],
+        "profileId": 1663549683,
+        "playerCode": "000001923080"
+      },
+      "hex": "55493c03500101012201df1e01c19201015404400101156b0101010102013501600235930101600b01010101010101010101fe01010165dc01015e0101010101010154fb01976738805fae010101010101010101011b9e0101019301010101010101020101010101330234014502010101010102a101019994",
+      "decoded": {
+        "name": "fw♪",
+        "nameCodes": [
+          306,
+          323,
+          412,
+          0,
+          0,
+          0
+        ],
+        "profileId": 1663549683,
+        "makeId": 5206,
+        "playerCode": "000001923080",
+        "gamePlayerCode": "000001923080",
+        "displayManager": 0,
+        "normalizedMakeId": 5206,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          83,
+          250,
+          50,
+          150,
+          102,
+          55,
+          127,
+          94,
+          173
+        ],
+        "outfit": [
+          49105,
+          20305,
+          55878,
+          56863
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    },
+    {
+      "input": {
+        "name": "ivA!V",
+        "appearance": [
+          174,
+          34,
+          209,
+          137,
+          144,
+          156,
+          155,
+          9,
+          163
+        ],
+        "outfit": [
+          26196,
+          45065,
+          34284,
+          23861
+        ],
+        "profileId": 3503013115,
+        "playerCode": "000001950223"
+      },
+      "hex": "5549ca03b101010173015e1e0167bb010143045601018fe00101010102013501600235930101600b0101010101010101010193010101d48701015e01010101010101af23018a919d9c0aa4010101010201010101011bca0101019301010101010101020101010101d2023701440101019f01df02ba0101e4a1",
+      "decoded": {
+        "name": "ivA!V",
+        "nameCodes": [
+          309,
+          322,
+          201,
+          413,
+          222,
+          0
+        ],
+        "profileId": 3503013115,
+        "makeId": 36433,
+        "playerCode": "000001950223",
+        "gamePlayerCode": "000001950223",
+        "displayManager": 0,
+        "normalizedMakeId": 36433,
+        "type": 2,
+        "version": 3,
+        "totalPlays": 1,
+        "likes": 20000000,
+        "rankUpLikePoint": 20000000,
+        "appearance": [
+          174,
+          34,
+          209,
+          137,
+          144,
+          156,
+          155,
+          9,
+          163
+        ],
+        "outfit": [
+          26196,
+          45065,
+          34284,
+          23861
+        ],
+        "recordedDate": [
+          2026,
+          10,
+          29
+        ],
+        "timeSupported": false,
+        "dateField": "stamp_rally_date",
+        "checksumValid": true,
+        "shuffleFamily": 0
+      }
+    }
+  ]
+}

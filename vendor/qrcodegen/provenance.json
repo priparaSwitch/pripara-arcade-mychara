@@ -1,0 +1,9 @@
+{
+  "name": "QR Code generator library",
+  "version": "1.8.0",
+  "source": "https://github.com/nayuki/QR-Code-generator/releases/download/v1.8.0/qrcodegen-v1.8.0-es6.js",
+  "license": "MIT",
+  "upstreamSha256": "6a1116192ed1dd67fa1bf31e77f5817103d71c23bbac24c382e698b7668bdd01",
+  "localSha256": "5cb9b15e933a7a7492f17166131a8d4ee714321c7db2fc6c11dcd15a9a5cb1c1",
+  "adaptation": "Renamed extension to .mjs and appended export {qrcodegen}; only. Original license retained."
+}

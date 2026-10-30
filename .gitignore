@@ -1,0 +1,14 @@
+/dist/
+/node_modules/
+.env
+.env.*
+!.env.example
+*.log
+*.zip
+__pycache__/
+.DS_Store
+Thumbs.db
+/reports/
+/private/
+/uploads/
+.cache/
