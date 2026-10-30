@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
-import {ALLOWED_NAME_CHARACTERS,MAX_PROFILE_ID,MAX_NATIVE_MAKE_ID,TOTAL_LIKES,INITIAL_PLAY_COUNT,
+import {ALLOWED_NAME_CHARACTERS,MAX_PROFILE_ID,MAX_NATIVE_MAKE_ID,TOTAL_LIKES,INITIAL_PLAY_COUNT,MAX_LIKES,parseLikesInput,
   buildPayload,decodePayload,packBody,unpackPayload,validateName,validatePlayerCode,
   encodeNumber,decodeNumber,createIdentity} from '../src/codec.mjs';
 import {createQrMatrix,matrixToSvg,renderQr} from '../src/qr.mjs';
@@ -37,6 +37,20 @@ test('new QR avoids the first-play reset while retaining identity and other prof
   const decodedLegacyBody=unpackPayload(legacy);
   const differences=[...currentBody].flatMap((value,index)=>value!==decodedLegacyBody[index]?[index]:[]);
   assert.deepEqual(differences,[28,119]);
+});
+test('manual likes update cumulative and rank points while preserving plays and the profile',()=>{
+  const original=decodePayload(buildPayload(sample()));
+  for(const likes of [0,1,254,255,12345678,MAX_LIKES]){
+    const next=decodePayload(buildPayload({...sample(),likes}));
+    assert.equal(next.likes,likes);assert.equal(next.rankUpLikePoint,likes);
+    assert.deepEqual({...next,likes:original.likes,rankUpLikePoint:original.rankUpLikePoint},original);
+    assert.equal(next.totalPlays,1);assert.equal(next.checksumValid,true);
+  }
+  for(const likes of [-1,1.5,MAX_LIKES+1,Infinity,NaN,true,null,'123'])assert.throws(()=>buildPayload({...sample(),likes}));
+});
+test('likes input accepts complete decimal integers and rejects empty, fractions and overflow',()=>{
+  for(const [text,expected] of [['0',0],['0001',1],['20000000',20000000],[' 12345678 ',12345678],[String(MAX_LIKES),MAX_LIKES]])assert.equal(parseLikesInput(text),expected);
+  for(const text of ['',' ','-1','1.5','1e3','NaN','20,000,000',String(MAX_LIKES+1),null,true])assert.throws(()=>parseLikesInput(text));
 });
 test('only the screenshot character set is allowed and names never silently change',()=>{
   const expected='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!?abcdefghijklmnopqrstuvwxyz★☆♪';

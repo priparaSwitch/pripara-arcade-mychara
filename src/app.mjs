@@ -1,4 +1,4 @@
-import {validateName, buildPayload, createIdentity} from './codec.mjs';
+import {validateName, buildPayload, createIdentity, TOTAL_LIKES, MAX_LIKES, validateLikes, parseLikesInput} from './codec.mjs';
 
 export const CATEGORIES = Object.freeze([
   ['face', '눈매'], ['hair', '헤어스타일'], ['hairColor', '헤어컬러'],
@@ -23,6 +23,7 @@ export function eyeCompatible(eye, face) {
 export function createCharacter(catalog, saved, identityFactory = createIdentity) {
   const character = {
     name: typeof saved?.name === 'string' ? [...saved.name].slice(0, 6).join('') : '',
+    likes: Number.isInteger(saved?.likes) && saved.likes >= 0 && saved.likes <= MAX_LIKES ? saved.likes : TOTAL_LIKES,
     parts: {},
     identity: identityIsValid(saved?.identity) ? {...saved.identity} : identityFactory(),
   };
@@ -59,6 +60,7 @@ export function selectPart(catalog, character, category, id) {
 
 export function buildCharacterInput(catalog, character) {
   validateName(character.name);
+  validateLikes(character.likes);
   if (!identityIsValid(character.identity)) throw new Error('플레이어 코드를 확인할 수 없어요. 페이지를 다시 불러와 주세요.');
   const values = {};
   for (const [category] of CATEGORIES) {
@@ -75,6 +77,7 @@ export function buildCharacterInput(catalog, character) {
     name: character.name,
     appearance: [values.face, values.hair, values.hairColor, values.skin, values.eye, values.glasses, 0, values.accent, 0],
     outfit: [...catalog.defaultOutfit],
+    likes: character.likes,
     ...character.identity,
   };
 }
@@ -95,6 +98,11 @@ export function writeCharacter(storage, character) {
 export function createGenerationGuard() {
   let version = 0;
   return {invalidate: () => ++version, start: () => ++version, isCurrent: token => token === version};
+}
+
+export function copyPngImage(blob, clipboard = globalThis.navigator?.clipboard, Item = globalThis.ClipboardItem) {
+  if (!clipboard?.write || typeof Item !== 'function') throw new Error('이 브라우저에서는 이미지 복사를 지원하지 않아요.');
+  return clipboard.write([new Item({'image/png': blob})]);
 }
 
 function element(tag, className, text) {
@@ -132,7 +140,7 @@ export async function startApp() {
   function persist() {
     const saved = writeCharacter(storage, character);
     $('storage-note').textContent = saved ?
-      '이름과 선택한 파츠는 이 브라우저에만 저장돼요.' :
+      '이름과 선택한 파츠·좋아요는 이 브라우저에만 저장돼요.' :
       '이 브라우저에서는 저장할 수 없어요. 페이지를 닫기 전에 만든 QR을 보관해 주세요.';
     document.getElementById('identity-note').textContent = saved ?
       '같은 브라우저에서는 플레이어 코드가 유지돼요. 다른 기기에서 이어서 쓰려면 만든 QR을 보관해 주세요.' :
@@ -149,6 +157,16 @@ export async function startApp() {
     return !error && character.name.length > 0;
   }
 
+  function updateLikesError() {
+    let error = '';
+    try { character.likes = parseLikesInput($('character-likes').value); }
+    catch (reason) { error = reason.message; }
+    $('likes-error').textContent = error;
+    $('likes-error').hidden = !error;
+    $('character-likes').setAttribute('aria-invalid', error ? 'true' : 'false');
+    return !error;
+  }
+
   function invalidateOutput() {
     generation.invalidate(); generating = false; output = null;
     $('generate').disabled = false;
@@ -160,7 +178,7 @@ export async function startApp() {
     $('copy').disabled = true;
     $('qr-state').textContent = '준비';
     $('qr-name').textContent = '홍콩판 마이캐릭터';
-    $('qr-description').textContent = '이름과 선택한 파츠로 QR을 만들어요. 좋아요는 20,000,000으로 설정돼요.';
+    $('qr-description').textContent = '이름과 선택한 파츠·좋아요로 QR을 만들어요.';
     $('qr-status').hidden = true;
   }
 
@@ -261,6 +279,12 @@ export async function startApp() {
   }
   $('total-count').textContent = `${CATEGORIES.reduce((total, [key]) => total + catalog.parts[key].length, 0)} PARTS`;
   $('character-name').value = character.name;
+  $('character-likes').value = String(character.likes);
+  $('character-likes').addEventListener('input', () => {
+    const valid = updateLikesError();
+    invalidateOutput();
+    if (valid) persist();
+  });
   $('character-name').addEventListener('input', event => {
     character.name = event.target.value;
     updateNameError(); invalidateOutput(); persist();
@@ -279,9 +303,44 @@ export async function startApp() {
   }));
   $('part-search').addEventListener('input', renderGrid);
 
+  const freshDialog = $('fresh-dialog');
+  $('start-fresh').addEventListener('click', () => {
+    $('fresh-copy').textContent = '클립보드로 복사하기';
+    $('fresh-copy-status').hidden = true;
+    freshDialog.showModal();
+  });
+  $('fresh-close').addEventListener('click', () => freshDialog.close());
+  freshDialog.addEventListener('close', () => $('start-fresh').focus({preventScroll: true}));
+  $('fresh-copy').addEventListener('click', async () => {
+    const button = $('fresh-copy');
+    let image;
+    button.disabled = true;
+    $('fresh-copy-status').hidden = true;
+    try {
+      image = fetch(new URL('../images/new-character-qr.png', import.meta.url)).then(response => {
+        if (!response.ok) throw new Error('QR 이미지를 불러오지 못했어요.');
+        return response.blob();
+      });
+      // Start the clipboard write inside the click gesture, including browsers that
+      // require the image promise before an asynchronous fetch finishes.
+      await copyPngImage(image);
+      button.textContent = '복사했어요';
+      $('fresh-copy-status').textContent = 'QR 이미지를 클립보드에 복사했어요.';
+    } catch {
+      // Some browsers reject ClipboardItem synchronously before its image promise
+      // is consumed. Keep a concurrent image-load failure from going unhandled.
+      if (image) void image.catch(() => {});
+      $('fresh-copy-status').textContent = '이미지를 길게 누르거나 마우스 오른쪽 버튼으로 복사해 주세요.';
+    } finally {
+      button.disabled = false;
+      $('fresh-copy-status').hidden = false;
+    }
+  });
+
   $('generate').addEventListener('click', async () => {
     if (generating) return;
-    if (!updateNameError(true)) { $('character-name').focus(); return; }
+    const validName = updateNameError(true), validLikes = updateLikesError();
+    if (!validName || !validLikes) { $(validName ? 'character-likes' : 'character-name').focus(); return; }
     invalidateOutput();
     const token = generation.start(); generating = true;
     $('generate').disabled = true; $('generate').textContent = 'QR을 만들고 있어요…';
@@ -299,6 +358,7 @@ export async function startApp() {
       $('qr-name').textContent = character.name;
       $('qr-description').textContent = '선택한 파츠로 만들었어요. PNG를 저장해서 사용해 주세요.';
       $('player-code').textContent = character.identity.playerCode;
+      $('qr-likes').textContent = input.likes.toLocaleString('ko-KR');
       $('download').href = result.pngDataUrl;
       $('download').download = `mychara-${character.name.replace(/[^A-Za-z0-9]/g, '_')}.png`;
       $('download').classList.remove('disabled'); $('download').setAttribute('aria-disabled', 'false');
@@ -322,10 +382,9 @@ export async function startApp() {
     if (!output) return;
     const currentOutput = output;
     try {
-      if (!navigator.clipboard?.write || typeof ClipboardItem === 'undefined') throw new Error('unsupported');
       const binary = atob(currentOutput.pngDataUrl.split(',')[1]);
       const data = Uint8Array.from(binary, value => value.charCodeAt(0));
-      await navigator.clipboard.write([new ClipboardItem({'image/png': new Blob([data], {type: 'image/png'})})]);
+      await copyPngImage(new Blob([data], {type: 'image/png'}));
       if (output === currentOutput) $('copy').textContent = '복사했어요';
     } catch {
       if (output !== currentOutput) return;

@@ -1,5 +1,6 @@
 // Independently recovered HK v3 App MyTicket format; no source game assets needed.
 export const TOTAL_LIKES = 20_000_000;
+export const MAX_LIKES = 255 ** 4 - 1;
 // A zero play count triggers the game's first-play identity reset after login.
 export const INITIAL_PLAY_COUNT = 1;
 export const RECORDED_DATE = Object.freeze([2026, 10, 29]);
@@ -29,6 +30,13 @@ export function encodeNumber(value,width) {
 export function decodeNumber(bytes) {
   if (!(bytes instanceof Uint8Array)||!bytes.length||bytes.some(v=>v===0)) throw new QrValidationError('잘못된 radix-255 숫자입니다.');
   return bytes.reduce((n,d)=>n*255+d-1,0);
+}
+export function validateLikes(value) {
+  return integer(value,0,MAX_LIKES,'좋아요');
+}
+export function parseLikesInput(text) {
+  if(typeof text!=='string'||!/^\d+$/.test(text.trim()))throw new QrValidationError('좋아요는 0 이상의 정수로 입력해 주세요.');
+  return validateLikes(Number(text.trim()));
 }
 export function validateName(name) {
   if(typeof name!=='string'||[...name].length<1||[...name].length>6) throw new QrValidationError('이름은 홍콩판에서 지원하는 문자 1~6자로 입력해 주세요.');
@@ -87,7 +95,7 @@ export function unpackPayload(payload) {
   if(!validBody(body)||body[119]!==sum(body.subarray(0,60))%255+1||body[120]!==sum(body.subarray(60,119))%255+1) throw new QrValidationError('HK 앱 티켓 검증값 또는 헤더가 올바르지 않습니다.');
   return body;
 }
-export function buildPayload({name,appearance,outfit,profileId,playerCode}) {
+export function buildPayload({name,appearance,outfit,profileId,playerCode,likes=TOTAL_LIKES}) {
   const nameCodes=validateName(name);
   if(!Array.isArray(appearance)||appearance.length!==9) throw new QrValidationError('홍콩판 외형 값은 정확히 9개가 필요합니다.');
   if(!Array.isArray(outfit)||outfit.length!==4) throw new QrValidationError('홍콩판 코디 값은 정확히 4개가 필요합니다.');
@@ -95,14 +103,15 @@ export function buildPayload({name,appearance,outfit,profileId,playerCode}) {
   outfit.forEach((value,index)=>integer(value,0,65024,`코디 ${index+1}`));
   integer(profileId,1,MAX_PROFILE_ID,'profile_id');
   const makeId=validatePlayerCode(playerCode);
+  validateLikes(likes);
   const body=new Uint8Array(121).fill(1);
   body.set([85,73,4,3]);
   [outfit[1],outfit[2],outfit[3],outfit[0]].forEach((value,index)=>body.set(encodeNumber(value,2),[4,7,10,13][index]));
   body.set(encodeNumber(profileId,4),16);
   body.set(encodeNumber(makeId,4),20);
   body.set(encodeNumber(INITIAL_PLAY_COUNT,3),26);
-  body.set(encodeNumber(TOTAL_LIKES,4),29);
-  body.set(encodeNumber(TOTAL_LIKES,4),33);
+  body.set(encodeNumber(likes,4),29);
+  body.set(encodeNumber(likes,4),33);
   body.set([27,11,30],48);
   body[58]=94;
   body.set(appearance.map(v=>v+1),66);

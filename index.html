@@ -25,6 +25,7 @@
       <div id="load-status" class="notice" role="status">파츠 목록을 불러오고 있어요…</div>
       <button id="retry" class="button secondary retry" type="button" hidden>다시 불러오기</button>
       <div id="workspace" class="workspace" hidden>
+        <div class="character-sidebar">
         <aside class="character-panel panel" aria-label="현재 마이캐릭터">
           <div class="panel-heading"><p class="eyebrow">MY CHARACTER</p><span class="mini-tag">01</span></div>
           <label class="name-label" for="character-name">캐릭터 이름 <span>최대 6자</span></label>
@@ -33,10 +34,19 @@
           <p id="name-help" class="small-copy">영문 대·소문자, 숫자, ! ? ★ ☆ ♪ 사용 가능</p>
           <p id="name-error" class="field-error" role="status" hidden></p>
           <div id="selected-parts" class="selected-parts" aria-label="선택한 파츠"></div>
+          <div class="likes-field">
+            <label class="likes-label" for="character-likes">좋아요<span aria-hidden="true">♥</span> 입력</label>
+            <input id="character-likes" class="likes-input" type="text" inputmode="numeric" pattern="[0-9]*" value="20000000" autocomplete="off" spellcheck="false" aria-describedby="likes-error" aria-invalid="false">
+            <p id="likes-error" class="field-error" role="status" hidden></p>
+          </div>
           <p class="outfit-note">의상은 기본 레슨 코디로 생성해요.</p>
           <button id="generate" class="button primary generate" type="button" aria-label="홍콩판 QR 만들기"><span aria-hidden="true">✦</span> 홍콩판 QR 만들기</button>
           <p id="storage-note" class="storage-note">이름과 선택한 파츠는 이 브라우저에만 저장돼요.</p>
         </aside>
+        <section class="fresh-panel panel" aria-label="처음부터 마이캐릭터 생성하기">
+          <button id="start-fresh" class="button secondary start-fresh" type="button" aria-haspopup="dialog" aria-controls="fresh-dialog">처음부터 마이캐릭터 생성하기</button>
+        </section>
+        </div>
         <section class="picker-panel panel" aria-labelledby="picker-title">
           <div class="picker-heading"><div><span class="section-kicker">PARTS COLLECTION</span><h2 id="picker-title">캐릭터 파츠</h2></div><span id="total-count" class="count-badge"></span></div>
           <div id="category-tabs" class="category-tabs" role="tablist" aria-label="파츠 종류"></div>
@@ -50,11 +60,21 @@
           <div class="picker-heading"><div><span class="section-kicker">READY TO PLAY</span><h2 id="qr-title">마이캐릭터 QR</h2></div><span id="qr-state" class="mini-tag">준비</span></div>
           <div class="qr-layout">
             <div class="qr-frame"><div id="qr-empty" class="qr-empty"><span class="qr-symbol" aria-hidden="true">▦</span><strong>나의 QR이 여기에 나타나요</strong><span>파츠를 고른 뒤 QR 만들기를 눌러주세요.</span></div><img id="qr-image" alt="홍콩판 마이캐릭터 QR" width="636" height="636" hidden></div>
-            <div class="qr-info"><h3 id="qr-name">홍콩판 마이캐릭터</h3><p id="qr-description">이름과 선택한 파츠로 QR을 만들어요.<br>좋아요는 20,000,000으로 설정돼요.</p><div id="qr-details" class="qr-details" hidden><div><span>플레이어 코드</span><strong id="player-code"></strong></div><div><span>좋아요</span><strong>20,000,000</strong></div></div><div class="qr-actions"><a id="download" class="button primary disabled" aria-disabled="true">PNG 저장</a><button id="copy" class="button secondary" type="button" disabled>이미지 복사</button></div><p id="identity-note" class="small-copy">같은 브라우저에서는 플레이어 코드가 유지돼요.<br>다른 기기에서 이어서 쓰려면 만든 QR을 보관해 주세요.</p></div>
+            <div class="qr-info"><h3 id="qr-name">홍콩판 마이캐릭터</h3><p id="qr-description">이름과 선택한 파츠, 입력한 좋아요로 QR을 만들어요.</p><div id="qr-details" class="qr-details" hidden><div><span>플레이어 코드</span><strong id="player-code"></strong></div><div><span>좋아요</span><strong id="qr-likes">20,000,000</strong></div></div><div class="qr-actions"><a id="download" class="button primary disabled" aria-disabled="true">PNG 저장</a><button id="copy" class="button secondary" type="button" disabled>이미지 복사</button></div><p id="identity-note" class="small-copy">같은 브라우저에서는 플레이어 코드가 유지돼요.<br>다른 기기에서 이어서 쓰려면 만든 QR을 보관해 주세요.</p></div>
           </div>
           <p id="qr-status" class="qr-status" role="status" aria-live="polite" hidden></p>
         </section>
       </div>
+      <dialog id="fresh-dialog" class="fresh-dialog" aria-labelledby="fresh-title" aria-describedby="fresh-description">
+        <h2 id="fresh-title">처음부터 마이캐릭터 생성하기</h2>
+        <p id="fresh-description">처음부터 하려면 이 QR코드를 사용해주세요</p>
+        <img id="fresh-qr" class="fresh-qr" src="./images/new-character-qr.png" alt="처음부터 마이캐릭터 생성용 QR코드" width="636" height="636">
+        <div class="fresh-actions">
+          <button id="fresh-copy" class="button primary" type="button">클립보드로 복사하기</button>
+          <button id="fresh-close" class="button secondary" type="button">닫기</button>
+        </div>
+        <p id="fresh-copy-status" class="fresh-copy-status" role="status" aria-live="polite" hidden></p>
+      </dialog>
       <section class="privacy-note"><span aria-hidden="true">◇</span><p><strong>이 기기 안에서 가볍게 만들어요.</strong> 캐릭터 정보와 QR을 서버로 보내지 않아요.</p></section>
     </main>
     <footer><span>mychara</span><p>프리파라 · 홍콩 아케이드판 마이캐릭터</p></footer>

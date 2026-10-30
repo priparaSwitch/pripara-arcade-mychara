@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,stat} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
 
 const root = new URL('../', import.meta.url);
 const catalog = JSON.parse(await readFile(new URL('public/data/parts.json',root),'utf8'));
@@ -57,4 +58,14 @@ test('all local thumbnails exist, use WebP, and the complete library stays below
     total += (await stat(url)).size;
   }
   assert.ok(total<500000, `Thumbnail total: ${total}`);
+});
+test('the supplied public starter QR stays an exact, metadata-free PNG asset',async()=>{
+  const png=await readFile(new URL('public/images/new-character-qr.png',root));
+  assert.equal(png.subarray(0,8).toString('hex'),'89504e470d0a1a0a');
+  assert.equal(png.readUInt32BE(16),636);assert.equal(png.readUInt32BE(20),636);
+  assert.equal(createHash('sha256').update(png).digest('hex'),'805e3c9cd5a829d237a5a5758ba522f370fba142f8d182c81b817d7941c430f5');
+  const chunks=[];
+  for(let offset=8;offset<png.length;){const length=png.readUInt32BE(offset);chunks.push(png.toString('ascii',offset+4,offset+8));offset+=12+length;}
+  assert.ok(chunks.includes('IHDR')&&chunks.includes('IDAT')&&chunks.includes('IEND'));
+  assert.ok(!chunks.some(type=>['tEXt','zTXt','iTXt','eXIf'].includes(type)));
 });

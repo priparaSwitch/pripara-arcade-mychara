@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {CATEGORIES, STORAGE_KEY, createCharacter, selectPart, buildCharacterInput,
   readCharacter, writeCharacter, createGenerationGuard, identityIsValid} from '../src/app.mjs';
+import {TOTAL_LIKES,MAX_LIKES} from '../src/codec.mjs';
 
 const stableIdentity = {profileId: 123456, playerCode: '000001912345'};
 function fixture() {
@@ -20,6 +21,7 @@ test('one blank-named character starts with known defaults and a stable identity
   const character = make();
   assert.equal(character.name, '');
   assert.deepEqual(character.identity, stableIdentity);
+  assert.equal(character.likes,TOTAL_LIKES);
   assert.deepEqual(Object.keys(character.parts), CATEGORIES.map(([key]) => key));
 });
 test('restoring saved choices preserves the identity independently of names and appearance', () => {
@@ -51,7 +53,7 @@ test('unknown part selections cannot enter the QR input', () => {
 test('QR input uses native appearance order, fixed lesson outfit and original identity', () => {
   const catalog = fixture(); const character = make(catalog); character.name = 'Ab1♪';
   assert.deepEqual(buildCharacterInput(catalog, character), {
-    name: 'Ab1♪', appearance: [0, 0, 0, 0, 4, 0, 0, 0, 0], outfit: catalog.defaultOutfit, ...stableIdentity,
+    name: 'Ab1♪', appearance: [0, 0, 0, 0, 4, 0, 0, 0, 0], outfit: catalog.defaultOutfit, likes:TOTAL_LIKES, ...stableIdentity,
   });
 });
 test('blank, unsupported and too-long names cannot produce QR input', () => {
@@ -76,6 +78,25 @@ test('local persistence uses only the app key and round-trips names, selections 
   assert.equal(writeCharacter(storage, original), true);
   assert.deepEqual([...saved.keys()], [STORAGE_KEY]);
   assert.deepEqual(readCharacter(storage, fixture()).character, original);
+});
+test('old browser profiles gain default likes without replacing their saved identity or parts', () => {
+  const original=make();original.name='Keep1';selectPart(fixture(),original,'face',2);
+  const old=structuredClone(original);delete old.likes;
+  const restored=createCharacter(fixture(),old,()=>assert.fail('must keep previous identity'));
+  assert.equal(restored.likes,TOTAL_LIKES);assert.deepEqual(restored.identity,original.identity);
+  assert.deepEqual(restored.parts,original.parts);assert.equal(restored.name,original.name);
+});
+test('manual likes including zero survive storage and reach the QR without reallocating identity', () => {
+  for(const likes of [0,12345678,MAX_LIKES]){
+    const saved=make();saved.name='Edit1';saved.likes=likes;
+    const restored=createCharacter(fixture(),JSON.parse(JSON.stringify(saved)),()=>assert.fail('unexpected new identity'));
+    assert.equal(restored.likes,likes);assert.equal(buildCharacterInput(fixture(),restored).likes,likes);
+    assert.deepEqual(restored.identity,stableIdentity);
+  }
+  for(const invalid of [-1,1.5,MAX_LIKES+1,'123',null]){
+    assert.equal(createCharacter(fixture(),{...make(),likes:invalid}).likes,TOTAL_LIKES);
+    assert.throws(()=>buildCharacterInput(fixture(),{...make(),name:'Edit1',likes:invalid}));
+  }
 });
 test('a changed character invalidates slow QR work and older failures cannot replace newer output', () => {
   const guard = createGenerationGuard(); const first = guard.start();
