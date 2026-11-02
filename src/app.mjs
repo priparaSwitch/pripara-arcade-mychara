@@ -1,4 +1,4 @@
-import {validateName, buildPayload, createIdentity, TOTAL_LIKES, MAX_LIKES, validateLikes, parseLikesInput} from './codec.mjs';
+import {validateName, buildPayload, createIdentity, normalizePlayerCode, randomPlayerCode, TOTAL_LIKES, MAX_LIKES, validateLikes, parseLikesInput} from './codec.mjs';
 
 export const CATEGORIES = Object.freeze([
   ['face', '눈매'], ['hair', '헤어스타일'], ['hairColor', '헤어컬러'],
@@ -7,9 +7,27 @@ export const CATEGORIES = Object.freeze([
 export const STORAGE_KEY = 'pripara-arcade-mychara:v1';
 
 export function identityIsValid(identity) {
-  return identity && Number.isInteger(identity.profileId) && identity.profileId > 0 &&
-    identity.profileId < 255 ** 4 && /^0000019\d{5}$/.test(identity.playerCode) &&
-    identity.playerCode !== '000001920094';
+  if (!identity || !validProfileId(identity.profileId)) return false;
+  try { return normalizePlayerCode(identity.playerCode) === identity.playerCode; } catch { return false; }
+}
+
+function validProfileId(value) { return Number.isInteger(value) && value > 0 && value < 255 ** 4; }
+
+export function createPlayerCodeSelection(initialCode, generateCode = randomPlayerCode) {
+  let value = normalizePlayerCode(initialCode), mode = 'random', issued = null;
+  return {
+    get value() { return value; },
+    get mode() { return mode; },
+    edit(text) { value = text; mode = 'manual'; },
+    normalize() { value = normalizePlayerCode(value); return value; },
+    randomize() { value = generateCode(value); mode = 'random'; issued = null; return value; },
+    prepare() {
+      value = normalizePlayerCode(value);
+      if (mode === 'random' && value === issued) value = generateCode(value);
+      return value;
+    },
+    markIssued(code) { issued = code; },
+  };
 }
 
 export function selectedRow(catalog, character, category) {
@@ -21,11 +39,14 @@ export function eyeCompatible(eye, face) {
 }
 
 export function createCharacter(catalog, saved, identityFactory = createIdentity) {
+  const identity = identityFactory();
+  const previousProfileId = saved?.profileId ?? saved?.identity?.profileId;
+  if (validProfileId(previousProfileId)) identity.profileId = previousProfileId;
   const character = {
     name: typeof saved?.name === 'string' ? [...saved.name].slice(0, 6).join('') : '',
     likes: Number.isInteger(saved?.likes) && saved.likes >= 0 && saved.likes <= MAX_LIKES ? saved.likes : TOTAL_LIKES,
     parts: {},
-    identity: identityIsValid(saved?.identity) ? {...saved.identity} : identityFactory(),
+    identity,
   };
   for (const [category] of CATEGORIES) {
     const rows = catalog.parts[category];
@@ -92,7 +113,8 @@ export function readCharacter(storage, catalog, identityFactory = createIdentity
 }
 
 export function writeCharacter(storage, character) {
-  try { storage.setItem(STORAGE_KEY, JSON.stringify(character)); return true; } catch { return false; }
+  const {name, likes, parts, identity} = character;
+  try { storage.setItem(STORAGE_KEY, JSON.stringify({name, likes, parts, profileId: identity.profileId})); return true; } catch { return false; }
 }
 
 export function createGenerationGuard() {
@@ -132,6 +154,7 @@ export async function startApp() {
   const catalog = await response.json();
   const restored = readCharacter(storage, catalog);
   const character = restored.character;
+  const codeSelection = createPlayerCodeSelection(character.identity.playerCode);
   const generation = createGenerationGuard();
   let active = 'face';
   let generating = false;
@@ -142,9 +165,20 @@ export async function startApp() {
     $('storage-note').textContent = saved ?
       '이름과 선택한 파츠·좋아요는 이 브라우저에만 저장돼요.' :
       '이 브라우저에서는 저장할 수 없어요. 페이지를 닫기 전에 만든 QR을 보관해 주세요.';
-    document.getElementById('identity-note').textContent = saved ?
-      '같은 브라우저에서는 플레이어 코드가 유지돼요. 다른 기기에서 이어서 쓰려면 만든 QR을 보관해 주세요.' :
-      '이 브라우저에서는 플레이어 코드를 저장할 수 없어요. 만든 QR을 보관해서 이어서 사용해 주세요.';
+    $('identity-note').textContent = '임의생성은 QR을 만들 때마다 새 번호를 사용해요. 직접 입력한 번호는 그대로 사용하며, 플레이어 코드는 브라우저에 저장하지 않아요.';
+  }
+
+  function updatePlayerCodeError(normalize = false) {
+    let error = '';
+    try {
+      const code = normalize ? codeSelection.normalize() : normalizePlayerCode(codeSelection.value);
+      if (normalize) $('character-player-code').value = code;
+    } catch (reason) { error = reason.message; }
+    $('player-code-error').textContent = error;
+    $('player-code-error').hidden = !error;
+    $('character-player-code').setAttribute('aria-invalid', error ? 'true' : 'false');
+    $('player-code-mode').textContent = codeSelection.mode === 'random' ? 'QR을 만들 때마다 새 번호를 사용해요.' : '직접 입력한 번호를 사용해요.';
+    return !error;
   }
 
   function updateNameError(force = false) {
@@ -278,6 +312,21 @@ export async function startApp() {
     $('category-tabs').append(button);
   }
   $('total-count').textContent = `${CATEGORIES.reduce((total, [key]) => total + catalog.parts[key].length, 0)} PARTS`;
+  $('character-player-code').value = codeSelection.value;
+  $('character-player-code').addEventListener('input', event => {
+    codeSelection.edit(event.target.value);
+    updatePlayerCodeError(); invalidateOutput();
+  });
+  $('character-player-code').addEventListener('blur', () => updatePlayerCodeError(true));
+  $('random-player-code').addEventListener('click', () => {
+    try {
+      $('character-player-code').value = codeSelection.randomize();
+      updatePlayerCodeError(); invalidateOutput();
+    } catch (error) {
+      $('player-code-error').textContent = error.message;
+      $('player-code-error').hidden = false;
+    }
+  });
   $('character-name').value = character.name;
   $('character-likes').value = String(character.likes);
   $('character-likes').addEventListener('input', () => {
@@ -339,25 +388,28 @@ export async function startApp() {
 
   $('generate').addEventListener('click', async () => {
     if (generating) return;
-    const validName = updateNameError(true), validLikes = updateLikesError();
-    if (!validName || !validLikes) { $(validName ? 'character-likes' : 'character-name').focus(); return; }
+    const validCode = updatePlayerCodeError(true), validName = updateNameError(true), validLikes = updateLikesError();
+    if (!validCode || !validName || !validLikes) { $(!validCode ? 'character-player-code' : validName ? 'character-likes' : 'character-name').focus(); return; }
     invalidateOutput();
     const token = generation.start(); generating = true;
     $('generate').disabled = true; $('generate').textContent = 'QR을 만들고 있어요…';
     $('qr-status').hidden = false; $('qr-status').textContent = '이 기기에서 QR을 만들고 있어요.';
     $('qr-status').classList.remove('error');
     try {
+      character.identity.playerCode = codeSelection.prepare();
+      $('character-player-code').value = codeSelection.value;
       const input = buildCharacterInput(catalog, character);
       const payload = buildPayload(input);
       const {renderQr} = await import('./qr.mjs');
       const result = await renderQr(payload);
       if (!generation.isCurrent(token)) return;
+      codeSelection.markIssued(input.playerCode);
       output = result;
       $('qr-image').src = result.pngDataUrl; $('qr-image').hidden = false;
       $('qr-empty').hidden = true; $('qr-details').hidden = false;
       $('qr-name').textContent = character.name;
       $('qr-description').textContent = '선택한 파츠로 만들었어요. PNG를 저장해서 사용해 주세요.';
-      $('player-code').textContent = character.identity.playerCode;
+      $('player-code').textContent = input.playerCode;
       $('qr-likes').textContent = input.likes.toLocaleString('ko-KR');
       $('download').href = result.pngDataUrl;
       $('download').download = `mychara-${character.name.replace(/[^A-Za-z0-9]/g, '_')}.png`;
@@ -393,7 +445,7 @@ export async function startApp() {
     }
   });
 
-  renderSelected(); showCategory('face'); updateNameError(); persist();
+  renderSelected(); showCategory('face'); updateNameError(); updatePlayerCodeError(); persist();
   if (restored.recovered) showSelection('저장된 정보를 읽지 못해 기본 파츠로 시작했어요.');
   $('load-status').hidden = true; $('retry').hidden = true; $('workspace').hidden = false;
 }

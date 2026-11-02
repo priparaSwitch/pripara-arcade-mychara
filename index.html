@@ -28,6 +28,14 @@
         <div class="character-sidebar">
         <aside class="character-panel panel" aria-label="현재 마이캐릭터">
           <div class="panel-heading"><p class="eyebrow">MY CHARACTER</p><span class="mini-tag">01</span></div>
+          <div class="player-code-field">
+            <label class="name-label" for="character-player-code">플레이어 코드 <span>숫자 12자리</span></label>
+            <input id="character-player-code" class="name-input player-code-input" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" aria-describedby="player-code-help player-code-mode player-code-error">
+            <button id="random-player-code" class="button secondary random-player-code" type="button">임의생성</button>
+            <p id="player-code-help" class="small-copy">12자리 미만은 앞에 0을 채워요. 홍콩판에서 사용할 수 있는 번호만 입력할 수 있어요.</p>
+            <p id="player-code-mode" class="small-copy">QR을 만들 때마다 새 번호를 사용해요.</p>
+            <p id="player-code-error" class="field-error" role="status" hidden></p>
+          </div>
           <label class="name-label" for="character-name">캐릭터 이름 <span>최대 6자</span></label>
           <input id="character-name" class="name-input" type="text" maxlength="6" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="이름을 입력해 주세요" aria-describedby="name-help name-error">
           <div class="name-tools"><span id="name-count">0 / 6</span><div class="specials" aria-label="이름에 특수문자 넣기"><button type="button" data-character="★" aria-label="이름에 검은 별 추가">★</button><button type="button" data-character="☆" aria-label="이름에 흰 별 추가">☆</button><button type="button" data-character="♪" aria-label="이름에 음표 추가">♪</button></div></div>
@@ -60,7 +68,7 @@
           <div class="picker-heading"><div><span class="section-kicker">READY TO PLAY</span><h2 id="qr-title">마이캐릭터 QR</h2></div><span id="qr-state" class="mini-tag">준비</span></div>
           <div class="qr-layout">
             <div class="qr-frame"><div id="qr-empty" class="qr-empty"><span class="qr-symbol" aria-hidden="true">▦</span><strong>나의 QR이 여기에 나타나요</strong><span>파츠를 고른 뒤 QR 만들기를 눌러주세요.</span></div><img id="qr-image" alt="홍콩판 마이캐릭터 QR" width="636" height="636" hidden></div>
-            <div class="qr-info"><h3 id="qr-name">홍콩판 마이캐릭터</h3><p id="qr-description">이름과 선택한 파츠, 입력한 좋아요로 QR을 만들어요.</p><div id="qr-details" class="qr-details" hidden><div><span>플레이어 코드</span><strong id="player-code"></strong></div><div><span>좋아요</span><strong id="qr-likes">20,000,000</strong></div></div><div class="qr-actions"><a id="download" class="button primary disabled" aria-disabled="true">PNG 저장</a><button id="copy" class="button secondary" type="button" disabled>이미지 복사</button></div><p id="identity-note" class="small-copy">같은 브라우저에서는 플레이어 코드가 유지돼요.<br>다른 기기에서 이어서 쓰려면 만든 QR을 보관해 주세요.</p></div>
+            <div class="qr-info"><h3 id="qr-name">홍콩판 마이캐릭터</h3><p id="qr-description">이름과 선택한 파츠, 입력한 좋아요로 QR을 만들어요.</p><div id="qr-details" class="qr-details" hidden><div><span>플레이어 코드</span><strong id="player-code"></strong></div><div><span>좋아요</span><strong id="qr-likes">20,000,000</strong></div></div><div class="qr-actions"><a id="download" class="button primary disabled" aria-disabled="true">PNG 저장</a><button id="copy" class="button secondary" type="button" disabled>이미지 복사</button></div><p id="identity-note" class="small-copy">임의생성은 QR을 만들 때마다 새 번호를 사용해요. 직접 입력한 번호는 그대로 사용하며, 플레이어 코드는 브라우저에 저장하지 않아요.</p></div>
           </div>
           <p id="qr-status" class="qr-status" role="status" aria-live="polite" hidden></p>
         </section>

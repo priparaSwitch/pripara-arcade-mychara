@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {ALLOWED_NAME_CHARACTERS,MAX_PROFILE_ID,MAX_NATIVE_MAKE_ID,TOTAL_LIKES,INITIAL_PLAY_COUNT,MAX_LIKES,parseLikesInput,
   buildPayload,decodePayload,packBody,unpackPayload,validateName,validatePlayerCode,
-  encodeNumber,decodeNumber,createIdentity} from '../src/codec.mjs';
+  encodeNumber,decodeNumber,createIdentity,normalizePlayerCode,randomPlayerCode,PLAYER_CODE_XOR} from '../src/codec.mjs';
 import {createQrMatrix,matrixToSvg,renderQr} from '../src/qr.mjs';
 const vectors=JSON.parse(await fs.readFile(new URL('./fixtures/myticket-vectors.json',import.meta.url),'utf8')).cases;
 const sample=()=>structuredClone(vectors[0].input);
@@ -68,21 +68,39 @@ test('all radix255 boundaries round-trip without zero bytes',()=>{
   for(const bad of [true,1.5,-1,NaN,Infinity])assert.throws(()=>encodeNumber(bad,4));
   assert.throws(()=>decodeNumber(new Uint8Array([0])));
 });
-test('player codes use native twelve-digit format and exclude new-character sentinel',()=>{
-  for(const code of ['000001900000','000001900001','000001950000','000001999999']){
+test('player codes normalize to twelve digits and preserve representable native values',()=>{
+  for(const code of ['000000000001','000000000123','000001900000','000001900001','000001950000','000001999999']){
     const input=sample();input.playerCode=code;
     assert.equal(decodePayload(buildPayload(input)).gamePlayerCode,code);
     assert.ok(validatePlayerCode(code)>0&&validatePlayerCode(code)<=MAX_NATIVE_MAKE_ID);
   }
-  for(const code of ['000001920094','000001900000000','000001899999','000002000000','1900000','00000190000','000001900000 ','0000019１２３４５','',1900000,true])assert.throws(()=>validatePlayerCode(code));
+  assert.equal(normalizePlayerCode('123'),'000000000123');
+  assert.equal(normalizePlayerCode(' 000123 '),'000000000123');
+  assert.equal(decodePayload(buildPayload({...sample(),playerCode:'123'})).gamePlayerCode,'000000000123');
+  const overNative=String((MAX_NATIVE_MAKE_ID+1)^PLAYER_CODE_XOR).padStart(12,'0');
+  for(const code of ['0','000000000000','000001920094','000001900000000','999999999999','000016777216',overNative,'123x','1e3','-1','1.2','0000019１２３４５','',1900000,true])assert.throws(()=>validatePlayerCode(code));
 });
-test('identity generator rejects biased high values and make-zero sentinel',()=>{
-  const words=[0xffffffff,123,0xffffffff,20094,3];
+
+test('identity generator rejects biased high values and zero displayed code',()=>{
+  const words=[0xffffffff,123,0xffffffff,PLAYER_CODE_XOR-1,3];
   const identity=createIdentity(out=>{out[0]=words.shift();});
-  assert.deepEqual(identity,{profileId:124,playerCode:'000001900003'});
+  assert.deepEqual(identity,{profileId:124,playerCode:'000001920090'});
   assert.equal(words.length,0);
   assert.throws(()=>createIdentity(out=>{out[0]=0xffffffff;}));
 });
+
+test('random player codes avoid the previous code, zero and fixed legacy prefixes',()=>{
+  const first='000001920095';
+  const words=[0,PLAYER_CODE_XOR-1,1];
+  const next=randomPlayerCode(first,out=>{out[0]=words.shift();});
+  assert.equal(next,String(2^PLAYER_CODE_XOR).padStart(12,'0'));
+  assert.equal(words.length,0);
+  const fullRange=randomPlayerCode('',out=>{out[0]=MAX_NATIVE_MAKE_ID-1;});
+  assert.equal(validatePlayerCode(fullRange),MAX_NATIVE_MAKE_ID);
+  assert.match(fullRange,/^\d{12}$/);
+  assert.notEqual(fullRange.slice(0,7),'0000019');
+});
+
 test('crypto identities are independent and nonzero',()=>{
   const identities=Array.from({length:24},()=>createIdentity());
   assert.equal(new Set(identities.map(x=>x.profileId)).size,24);

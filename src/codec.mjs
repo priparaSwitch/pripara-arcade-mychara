@@ -45,11 +45,20 @@ export function validateName(name) {
   const result=[...name].map(c=>NAME_CODES.get(c));
   return [...result,...Array(6-result.length).fill(0)];
 }
-export function validatePlayerCode(code) {
-  if(typeof code!=='string'||!/^0000019[0-9]{5}$/.test(code)) throw new QrValidationError('플레이어 코드는 0000019로 시작하는 숫자 12자리여야 합니다.');
-  const makeId=Number(code)^PLAYER_CODE_XOR;
+export function normalizePlayerCode(code) {
+  if(typeof code!=='string'||!/^\d{1,12}$/.test(code.trim())) throw new QrValidationError('플레이어 코드는 숫자 1~12자리로 입력해 주세요.');
+  const normalized=code.trim().padStart(12,'0');
+  if(Number(normalized)===0) throw new QrValidationError('000000000000은 사용할 수 없어요. 다른 번호를 입력하거나 임의생성을 눌러 주세요.');
+  // App MyTicket has no display-manager field. Check before XOR so JS cannot
+  // silently truncate an unsupported 12-digit number into a different identity.
+  if(Number(normalized)>0xFFFFFF) throw new QrValidationError('홍콩판 QR에서 유지할 수 없는 번호예요. 임의생성으로 사용할 수 있는 번호를 만들어 주세요.');
+  const makeId=Number(normalized)^PLAYER_CODE_XOR;
   if(makeId===0) throw new QrValidationError('000001920094는 게임에서 신규 캐릭터로 처리되므로 사용할 수 없습니다.');
-  return integer(makeId,1,MAX_NATIVE_MAKE_ID,'make_id');
+  if(makeId>MAX_NATIVE_MAKE_ID) throw new QrValidationError('홍콩판 QR에서 유지할 수 없는 번호예요. 임의생성으로 사용할 수 있는 번호를 만들어 주세요.');
+  return normalized;
+}
+export function validatePlayerCode(code) {
+  return Number(normalizePlayerCode(code))^PLAYER_CODE_XOR;
 }
 function randomBelow(maximum,fillRandom) {
   const cap=Math.floor(2**32/maximum)*maximum;
@@ -62,9 +71,14 @@ function randomBelow(maximum,fillRandom) {
 }
 export function createIdentity(fillRandom=(words)=>globalThis.crypto.getRandomValues(words)) {
   const profileId=randomBelow(MAX_PROFILE_ID,fillRandom)+1;
+  return {profileId,playerCode:randomPlayerCode('',fillRandom)};
+}
+export function randomPlayerCode(exclude='',fillRandom=(words)=>globalThis.crypto.getRandomValues(words)) {
   for(let retry=0;retry<1000;retry++) {
-    const playerCode=`0000019${String(randomBelow(100000,fillRandom)).padStart(5,'0')}`;
-    if(playerCode!=='000001920094')return {profileId,playerCode};
+    const makeId=randomBelow(MAX_NATIVE_MAKE_ID,fillRandom)+1;
+    const number=makeId^PLAYER_CODE_XOR;
+    const playerCode=String(number).padStart(12,'0');
+    if(number!==0&&playerCode!==exclude)return playerCode;
   }
   throw new QrValidationError('캐릭터 번호를 만들지 못했어요. 다시 시도해 주세요.');
 }
